@@ -50,14 +50,6 @@ To get started with **react-native-ui**, follow these steps:
     export default App;
     ```
 
-## Documentation
-
-Comprehensive documentation is available at [Documentation Link](). Here you'll find guides, API references, and examples to help you make the most of **react-native-ui**.
-
-## Contributing
-
-We welcome contributions! Please read our [Contributing Guide](CONTRIBUTING.md) to learn how you can get involved.
-
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the GNU GENERAL PUBLIC LICENSE - see the [LICENSE](https://github.com/Mael-conception/react-native-ui/blob/main/LICENSE) file for details.
