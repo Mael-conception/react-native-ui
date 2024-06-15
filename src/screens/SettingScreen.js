@@ -7,7 +7,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
 import Icon from "../components/buttons/Icon";
 
-export default function HomeScreenExemple() {
+export default function SettingScreen() {
     const { theme, toggleTheme } = useTheme();
 
     return (
@@ -19,20 +19,18 @@ export default function HomeScreenExemple() {
                 title="Primary Button"
                 onPress={""}
                 border="rounded"
-                color="warning"
+                color="primary"
                 width="sm"
-                iconRight="arrow-forward"
-
             />
             <Button
                 title="Secondary Button"
                 onPress={""}
                 border="rounded"
-                color="success"
+                color="danger"
                 width="md"
                 iconRight="arrow-forward"
             />
-            <Button
+             <Button
                 title="Secondary Button"
                 onPress={""}
                 border="roundedFull"
@@ -42,20 +40,7 @@ export default function HomeScreenExemple() {
                 loading={false}
 
             />
-            <Icon
-                icon="settings"
-                onPress={() => console.log('Settings pressed')}
-                variant="background"
-                style={{ margin: 10 }}
-                loading
-            />
-            <Icon
-                icon="person"
-                onPress={() => console.log('Profile pressed')}
-                variant="light"
-                style={{ margin: 10 }}
-                disabled
-            />
+           
         </View>
     );
 }
@@ -65,8 +50,8 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        paddingHorizontal: 24,
-        gap: 10
+        paddingHorizontal : 24,
+        gap:10     
     },
     headerTitle: {
         fontSize: 34,
