@@ -1,26 +1,39 @@
-// Icon.js
 import React from 'react';
-import { TouchableOpacity } from 'react-native';
-import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import { TouchableWithoutFeedback, View } from 'react-native';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import { useTheme } from '../../context/ThemeContext';
-import Styles from '../../styles/Icon.styles';
+import Styles from './Icon.styles';
 
-const Icon = ({ iconName, focused, accessibilityLabel, onPress, style, color }) => {
+const Icon = ({
+  iconName,
+  size = 'medium',
+  color = 'default',
+  onPress,
+  accessibilityLabel,
+  style = {},
+  backgroundColor = 'transparent',
+}) => {
   const { theme } = useTheme();
   const styles = Styles(theme);
 
+  const iconSizeStyle = styles[size] || styles.medium;
+
+  const buttonStyles = [
+    styles.button,
+    { backgroundColor },
+    style,
+  ];
+
   return (
-    <TouchableOpacity
-      style={[styles.tabBarIcon, focused && styles.tabBarIconHighlighted, style]}
-      accessibilityLabel={accessibilityLabel}
-      onPress={onPress}
-    >
-      <MaterialIcons 
-        name={iconName} 
-        size={24} 
-        color={focused ? '#ffffff' : (color || theme.text)} 
-      />
-    </TouchableOpacity>
+    <TouchableWithoutFeedback onPress={onPress} accessibilityLabel={accessibilityLabel}>
+      <View style={buttonStyles}>
+        <MaterialCommunityIcons
+          name={iconName}
+          size={iconSizeStyle.width}
+          color={color === 'default' ? theme.text : color}
+        />
+      </View>
+    </TouchableWithoutFeedback>
   );
 };
 
