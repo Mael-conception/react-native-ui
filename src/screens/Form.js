@@ -1,10 +1,10 @@
-// FormScreen.js
 import React, { useState } from 'react';
-import { View, Button, Alert } from 'react-native';
+import { View, Alert, Text } from 'react-native';
 import { useTheme } from '../context/ThemeContext';
 import Input from '../components/inputs/Input';
 import Styles from '../styles/form.style';
 import Icon from '../components/buttons/Icon';
+import Button from '../components/buttons/Button'
 
 const Form = () => {
     const { theme } = useTheme();
@@ -39,29 +39,41 @@ const Form = () => {
 
     return (
         <View style={styles.container}>
-            <Input
-                label="Username"
-                placeholder="Enter your username"
-                size="lg"
-                variant="bottom"
-                iconLeft={<Icon iconName="person" />} 
-            />
-            <Input
-                label="Password"
-                placeholder="Enter your password"
-                size="lg"
-                variant="full"
-                iconLeft={<Icon iconName="lock" />}
-                iconRight={<Icon iconName="visibility" />}
-            />
-             <Input
-                label="Password"
-                placeholder="Enter your password"
-                size="lg"
-                variant="rounded"
-                iconLeft={<Icon iconName="lock" />}
-                iconRight={<Icon iconName="visibility" />}
-            />
+            <View style={styles.card}>
+                <Text style={styles.label}>Inscription</Text>
+                <View>
+                    <Input
+                        label="Username"
+                        placeholder="Enter your username"
+                        size="lg"
+                        variant="full"
+                        iconLeft="account-outline"
+                    />
+                    <Input
+                        label="Mot de passe"
+                        placeholder="Entrez votre mot de passe"
+                        iconLeft="lock-outline"
+                        iconRight="visibility"
+                        size="lg"
+                        variant="bottom"
+                        secureTextEntry
+                    />
+                    <Input
+                        label="Email"
+                        placeholder="Enter your email"
+                        size="lg"
+                        variant="rounded"
+                        iconLeft="email-outline"
+                    // error="Invalid email address"
+                    />
+                </View>
+                <Button title="Inscription"
+                    onPress={() => { }}
+                    color="primary"
+                    border="roundedFull"
+                    width="large"
+                />
+            </View>
         </View>
     );
 };

@@ -1,23 +1,23 @@
 const Typography = {
-// button text
+  // button text
   buttonTextSm: {
-    fontSize: 12,
-    fontWeight: '700',
+    fontSize: 16,
+    fontWeight: '900',
   },
   buttonTextMd: {
-    fontSize: 16,
-    fontWeight: '700',
+    fontSize: 18,
+    fontWeight: '900',
   },
   buttonTextLg: {
     fontSize: 20,
-    fontWeight: '700',
+    fontWeight: '900',
   },
-// label text
+  // label text
   labelText: {
     fontSize: 14,
     fontWeight: 'normal',
   },
-// heading text  
+  // heading text  
   heading1: {
     fontSize: 32,
     fontWeight: 'bold',
@@ -34,12 +34,19 @@ const Typography = {
     fontSize: 16,
     fontWeight: '500',
   },
-// body text
-  text1: {
+  
+  // additional text styles
+  smallText: {
+    fontSize: 12,
+    fontWeight: 'normal',
+  },
+  mediumText: {
     fontSize: 16,
-    lineHeight: 24,
-    paddingHorizontal: 16,
-    paddingVertical: 8,
+    fontWeight: 'normal',
+  },
+  largeText: {
+    fontSize: 20,
+    fontWeight: 'normal',
   },
 };
 
