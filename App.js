@@ -1,13 +1,20 @@
+import React from 'react';
 import { SafeAreaProvider, initialWindowMetrics } from 'react-native-safe-area-context';
-import HomeScreenExemple from './src/screens/HomeScreenExemple';
+import { NavigationContainer } from '@react-navigation/native';
 import { ThemeProvider } from './src/context/ThemeContext';
+import BottomTabNavigator from './src/components/tabBar/BottomTab';
+import { themes } from './src/styles/themes';
 
-export default function App() {
+const App = () => {
   return (
     <SafeAreaProvider initialMetrics={initialWindowMetrics}>
       <ThemeProvider>
-        <HomeScreenExemple />
+        <NavigationContainer>
+          <BottomTabNavigator />
+        </NavigationContainer>
       </ThemeProvider>
     </SafeAreaProvider>
   );
-}
+};
+
+export default App;
